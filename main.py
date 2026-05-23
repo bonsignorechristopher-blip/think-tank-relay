@@ -11,9 +11,11 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
+from catalyst import router as catalyst_router
 
 app = FastAPI(title="Bonsignore Think Tank Relay", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
+app.include_router(catalyst_router)
 
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 OPENAI_KEY    = os.environ.get("OPENAI_API_KEY", "")
