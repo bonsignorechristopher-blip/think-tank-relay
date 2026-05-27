@@ -6,8 +6,7 @@ FastAPI router mounted to think-tank-relay.
   Sources: Finnhub (primary) -> NewsAPI (secondary) -> SEC EDGAR (fallback)
 Output: catalyst_score.json schema per OPENCLAW_CATALYST_DESIGN.md
 """
-
-  import os
+import os
 import requests
 import xml.etree.ElementTree as ET
 from datetime import date, datetime, timezone, timedelta
